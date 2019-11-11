@@ -1,0 +1,25 @@
+.chat-side
+  .side-header
+    .side-header__box
+      %p.side-header__box__user-name
+        ユーザーネーム
+      %ul.side-header__box__menu
+        %li.list
+          = link_to '#' do
+            %i.fa.fa-edit.icon
+        %li.list
+          = link_to '#' do
+            %i.fa.fa-cog.icon
+
+
+  .groups
+    .group
+      %p.group__group-name グループ名
+      %p.group__latest-message グループメッセージ
+    .group
+      %p.group__group-name グループ名
+      %p.group__latest-message グループメッセージ
+    .group
+      %p.group__group-name グループ名
+      %p.group__latest-message グループメッセージ
+
