@@ -1,0 +1,32 @@
+.chat-main
+  .main-header
+    .main-header__left-box
+      %h2.main-header__left-box__current-group グループ名
+      %ul.main-header__left-box__member-list
+        Member：
+        %li.main-header__left-box__member-list__member メンバー
+    .main-header__edit-btn
+      = link_to 'Edit', "#", class: "btn"
+
+      
+  .messages
+    .message
+      .message__upper-info
+        %p.message__upper-info__talker メンバー
+        %p.message__upper-info__date 2019/11/1
+      %p.message__text メッセージ内容
+    .message
+      .message__upper-info
+        %p.message__upper-info__talker メンバー
+        %p.message__upper-info__date 2019/11/1
+      %p.message__text メッセージ内容
+    
+  .form
+    %form#new_message.new_message
+      .input-box
+        %input#message_content.input-box__text{name: "message[content]", placeholder: "type a message", type: "text"}/
+        %label.input-box__image
+          = fa_icon "image"
+          %input.input-box__image__camera{ type: 'file'}
+    %input.submit{:type: "submit", :value: "Send"}/
+    
