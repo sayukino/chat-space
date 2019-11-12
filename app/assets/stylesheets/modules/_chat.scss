@@ -24,15 +24,17 @@
         }
       }    
      }
-    .btn {
+    .main-header__edit-btn {
       height: 40px;
-      text-decoration: none;
       line-height: 40px;
       padding: 0 20px;
       margin-top: 30px;
       border: solid 1px $light-blue;
       float: right;
+    .btn {
+      text-decoration: none;
       color: $light-blue;
+      }
     }
   }
 
