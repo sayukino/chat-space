@@ -7,19 +7,19 @@ class UsersController < ApplicationController
 
 
   def edit
-    @user = User.find(params[:id])
   end
 
    def update
-    user = User.find(params[:id])
-    if user.user_id = current_user.id
-      user.update(user_params)
-    redirect to controller: :messages, action: :index
+    if current_user.update(user_params)
+      redirect_to root_path
+    else
+      render :edit
     end
+  end
 
   private
   def user_params
-    params.permit(:user_name, :email)
+    params.require(:user).permit(:user_name, :email)
   end
 
 

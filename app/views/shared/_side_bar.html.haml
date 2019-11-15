@@ -2,13 +2,13 @@
   .side-header
     .side-header__box
       %p.side-header__box__user-name
-        ユーザーネーム
+        = current_user.name
       %ul.side-header__box__menu
         %li.list
           = link_to '#' do
             %i.fa.fa-edit.icon
         %li.list
-          = link_to '#' do
+          = link_to edit_user_path(current_user) do
             %i.fa.fa-cog.icon
 
 
