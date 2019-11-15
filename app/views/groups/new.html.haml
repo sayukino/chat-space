@@ -1,0 +1,34 @@
+ 
+!!! 
+%html{lang: "ja"} 
+.flash-box
+.chat-group-form
+%h1
+  新規チャットグループ
+  form.new_group#new-group
+   .chat-group-form 
+  = form_for(@group, @user) do |f|
+    .form__field
+      .chat-group-form__field__left
+        = f.label :グループ名, class: "form__field__label"
+      .chat-group-form__right  
+        = f.text_field :group_name, class: "form__field__input",placeholder: "グループ名を入力してください"
+
+    .fchat-group-form__field
+      .chat-group-form__field__left
+        = f.label :チャットメンバーを追加, class: "form__field__label"
+      .chat-group-form__field__right
+        =  <%= form_tag('/products/search', method: :get) do %>
+                <input class="search__query" name="keyword" placeholder="追加したいユーザー名を入力してください" type="text" value=""></input> ←訂正
+
+        .chat-group-form__field
+      .chat-group-form__field__left
+        = f.label :チャットメンバー, class: "form__field__label"
+      .chat-group-form__field__right
+        = f.collection_check_boxes :user_ids, User.all, :id, :name  ←訂正
+
+
+    .chat-group-form__field
+      .chat-group-form__field__left
+      .chat-group-form__field__right
+        = f.submit :登録する

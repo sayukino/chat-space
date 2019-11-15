@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+<title>ChatSpaceSample</title>
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="vAlEFGeflymYHHu6pbeNsaQoq+u/I8IXRRUw3g4QvOsvtgnk5rsWE59QsuFd6IgkovuKs/JuAyWEbn0OgRsZmw==" />
+<link rel="stylesheet" media="all" href="/assets/application-20597f7122b97f433c4487edf7d6a0cfc9e951e2a661b8b0c7320b95bbd38ccd.css" data-turbolinks-track="reload" />
+<script src="/assets/application-92a91cf5753a538c5407a46c726acab43576fb46358ffa8a7ee0ee0719aa2f51.js" data-turbolinks-track="reload"></script>
+</head>
+
+<body>
+ノーティス
+<div class='flash-box'>
+<div class="notice">ログインしました。</div>
+</div>
+
+左のユーザーと管理サイド
+<div class='wrapper'>
+<div class='chat-side'>
+<div class='side-header'>
+<div class='side-header__box'>
+<p class='side-header__box__user-name'>
+@user
+</p>
+
+<ul class='side-header__box__menu'>
+<li class='side-header__box__menu__new-group'>
+<%= link_to new_group_path %><i class="fa fa-edit"><% end %></li>
+<li class='side-header__box__menu__edit-user'>
+<%= link_to edit_user_path(user.id) %><i class="fa fa-cog"></i>
+<% end %></li>
+</ul>
+</div>
+</div>
+
+左下の所属グループ一覧
+<div class='groups'>
+<% @groups.each do |group| %>
+<% =link_to group_ %><div class='group'>
+<p class='group__group-name'>group.group_name</p>
+<% if group.body.present? %>
+<%= group.body.last %>
+<% else %>
+<p class='group__latest-message'>まだメッセージがありません</p>
+</div>
+<% end %>
+<% end %>
+</div>
+
+<div class='chat-main'>
+<div class='main-header'>
+<div class='main-header__left-box'>
+<h2 class='main-header__left-box__current-group' ><%= @group.group_name %></h2>
+<ul class='main-header__left-box__member-list'>
+Member：
+<li class='main-header__left-box__member-list__member'><%= @users.each do |user| %></li>
+</ul>
+</div>
+<%= button_to "Edit", {controller: 'groups', action: 'edit'}, {method: :get, class: " main-header__edit-btn "} %>
+</div>
+<hr>
+
+右下メッセージ欄
+<div class='messages'>
+<% @messages.each do |message| %>
+<div class='message__upper-info'>
+<p class='message__upper-info__talker'><%= message.user.user_name %> </p>
+<p class='message__upper-info__date'><%= message.created_at %></p>
+</div>
+<p class='message__text'><%= message.body %></p>
+<% end %>
+</div>
+</div>
+
+メッセージ投稿
+<div class='form'>
+<%= form_for(@messages,:html => {:class => "fieldnew_messages", :multipart => true}) do |f|%>
+<% end %>
+<%= f.text_area :body, class: : input-box__text, placeholder :”type a message” %>
+<%= f.text_area :image, id: :fruit_description %> <%= form.submit %> <% end %>
+<%= f.label, class="input-box__image" for="message_image" %><i class="fa fa-image"></i>
+<%= f.input, class: "input-box__image__file", type: "file" ,name: "message[image]", id: "message_image" %>
+</label></div>
+<%= f.submit "Send", class: "submit-btn", data-disable-with: "Send" %>
+</form></div>
+</div>
