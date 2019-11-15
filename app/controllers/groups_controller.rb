@@ -10,7 +10,7 @@ class GroupsController < ApplicationController
 
 
   
-  def create
+def create
   @group = Group.new(group_params)
   if @group.save
    redirect_to controller: :messages, action: :index
@@ -19,16 +19,6 @@ class GroupsController < ApplicationController
    render 'new'
  end
 end
-
-  def show
-    @users = group.groups_users
-  end
-
-  def delete
-    @users = group.groups_users
-    @user = @users.find(params[:id])
-    @user.delete unless @user = current_user
-  end
 
  
   def edit
