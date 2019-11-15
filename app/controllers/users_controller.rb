@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  def show
+  def index
     @user = User.find(params[:id])
     @groups = @user.groups.order("created_at ASC")
   end
