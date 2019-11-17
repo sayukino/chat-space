@@ -1,10 +1,5 @@
 class UsersController < ApplicationController
 
-  def index
-    @user = User.find(params[:id])
-    @groups = @user.groups.order("created_at ASC")
-  end
-
 
   def edit
   end
@@ -19,7 +14,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:user_name, :email)
+    params.require(:user).permit(:name, :email)
   end
 
 
