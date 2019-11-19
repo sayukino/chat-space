@@ -55,3 +55,5 @@ gem "haml-rails"
 gem 'devise'
 gem 'font-awesome-rails'
 gem 'pry-byebug'
+gem 'carrierwave'
+gem 'mini_magick'
