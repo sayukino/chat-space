@@ -1,3 +1,25 @@
-.wrapper {
-  @include flexbox;
+.message {
+  box-sizing: border-box;
+  padding: 0 0 40px;
+}
+.message_upper-info {
+  display: inline-flex;
+  margin-bottom: 10px;
+}
+.message__upper-info__talker {
+  color: #434a54;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.chat-main .messages .message__upper-info__date {
+  color: #999999;
+  font-size: 12px;
+  margin-left: 10px;
+}
+
+.message__text {
+  color: #434a54;
+  font-size: 14px;
+  margin-bottom: 10px;
 }

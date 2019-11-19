@@ -20,8 +20,10 @@
         display: flex;
         &___member {
           display: inline-block;
-          padding-right: 5px;
         }
+          li {
+            padding-right: 5px;
+          }
       }    
      }
     .main-header__edit-btn {
@@ -76,40 +78,40 @@
     height: 90px;
     padding: 20px 40px;
     background-color: #ddd;
-      .input-box {
-        display: flex;
-        position: relative;
-        &__text {
-          height: 50px;
-          width: calc(100% - 155px);
-          padding: 0 40px 0 10px;
-          border-style: none;
-          font-size: 16px;
-          color: $kuro;
-          border: none;
-          line-height: 16px;
-        }
-        &__image {
-          padding-right: 10px;
-          position: absolute;
-          width: 10%;
-          right: 60px;
-          top: 15px;
-             &__camera {
-             display:none;
-             }
-        }
-      }
-      .submit {
-        background-color: #38AEF0;
-        width: 100px;
+    .input-box {
+      display: flex;
+      position: relative;
+      &__text {
         height: 50px;
-        float: right;
-        padding: 0 30px;
-        position: relative;
-        bottom: 50px;
-        color: $white;
+        width: calc(100% - 155px);
+        padding: 0 40px 0 10px;
+        border-style: none;
+        font-size: 16px;
+        color: $kuro;
+        border: none;
+        line-height: 16px;
       }
+      &__image {
+        padding-right: 10px;
+        position: absolute;
+        width: 10%;
+        right: 60px;
+        top: 15px;
+          .upload {
+            display: none;
+          }
+      }
+    }
+    &__submit {
+      background-color: #38AEF0;
+      width: 100px;
+      height: 50px;
+      float: right;
+      padding: 0 30px;
+      position: relative;
+      bottom: 50px;
+      color: $white;
+    }
 
   }
 } 
