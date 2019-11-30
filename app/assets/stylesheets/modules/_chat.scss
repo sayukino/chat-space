@@ -1,5 +1,6 @@
 .chat-main {
   width: calc(100vw - 300px);
+  height: 100vh;
   .main-header {
     box-sizing: border-box;
     height: 100px;
@@ -45,6 +46,7 @@
     height: calc(100% - 100px - 90px);
     padding: 46px 40px 0;
     background-color: #fafafa;
+    overflow: scroll scroll; 
 
     .message {
       box-sizing: border-box;
@@ -83,7 +85,7 @@
       position: relative;
       &__text {
         height: 50px;
-        width: calc(100% - 155px);
+        width: calc(100vh - 155px);
         padding: 0 40px 0 10px;
         border-style: none;
         font-size: 16px;

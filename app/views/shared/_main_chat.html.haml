@@ -11,11 +11,10 @@
     .main-header__edit-btn
       = link_to 'Edit', edit_group_path(@group.id), class: "btn"
   .messages
-    = render partial: 'messages/message', collection: @messages
+    = render partial: 'messages/message', collection: @messages, style: "overflow: visible scroll;"
 
-    
   .form
-    = form_for [@group, @message] do |f|
+    = form_for [@group, @message], html: {id: 'message-form'}  do |f|
       .input-box
         = f.text_field :body, class: 'input-box__text', placeholder: 'type a message'
         = f.label :image, class: 'input-box__image' do
