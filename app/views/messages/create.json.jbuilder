@@ -1,5 +1,6 @@
-json.user_name  @message.user.name
-json.message_time  @message.created_at.strftime("%Y/%m/%d %H:%M")
-json.message_body  @message.body
-json.image  @message.image.url
-
+json.body      @message.body
+json.image      @message.image.url
+json.created_at @message.created_at.strftime("%Y年%m月%d日 %H時%M分")
+json.user_name @message.user.name
+#idもデータとして渡す
+json.id @message.id
