@@ -23,20 +23,17 @@ class GroupsController < ApplicationController
   end
 
   def update
-    group = Group.find(params[:id])
-    if group.user.user_id == current_user.id
-      group.update(group_params)
-       if group.update
-        redirect_to controller: :messages, action: :show
-        flash[:update_success] = 'グループを編集しました'
-       else
-        render 'edit'
+    @group = Group.find(params[:id])
+      @group.update(group_params)
+        if @group.update(group_params)
+        redirect_to root_path, notice: 'グループを編集しました'
+        else
+        render :edit
       end
     end
-  end
  
   private
   def group_params
-    params.require(:group).permit(:name, user_ids: [] )
+    params.require(:group).permit(:name, user_ids: [])
   end
 end
